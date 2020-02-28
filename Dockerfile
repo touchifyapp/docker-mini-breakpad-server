@@ -25,9 +25,10 @@ ENV MINI_BREAKPAD_SERVER_PORT=1127
 
 VOLUME /app/pool
 
-COPY --from=build /app/lib /app/lib
 COPY --from=build /app/node_modules /app/node_modules
 COPY --from=build /app/package.json /app/package.json
+COPY --from=build /app/views /app/views
+COPY --from=build /app/lib /app/lib
 
 EXPOSE 1127
 
